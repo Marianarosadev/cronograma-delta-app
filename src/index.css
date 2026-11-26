@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+/* Identidade "rubi": neutros marfim e pedra, rubi nas ações, bordô nas faixas escuras e rosé só como acento. */
+@theme {
+  --font-sans: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+
+  --color-fundo: #f6f3ef;
+  --color-fundo-alt: #ece7e1;
+  --color-superficie: #fdfbf9;
+  --color-texto: #2a1a1e;
+  --color-texto-suave: #5e5557;
+  --color-rose-acento: #a8676f;
+  --color-taupe: #857570;
+  --color-vinho: #8c2638;
+  --color-vinho-hover: #741f2e;
+  --color-vinho-forte: #3e1a24;
+  --color-rodape-suave: #e6d5cf;
+  --color-rodape-linha: #6b4450;
+  --color-rose-claro: #e2a9b1;
+  --color-linha: #e2dcd5;
+
+  --radius-marca: 4px;
+}
+
+body {
+  @apply bg-fundo font-sans text-[16px] leading-[1.6] text-texto antialiased md:text-[17px];
+}
+
+::selection {
+  @apply bg-rose-claro/60;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.aparecer {
+  animation: aparecer 400ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aparecer {
+    animation: none;
+  }
+}
